@@ -1,0 +1,108 @@
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;            
+}
+body{
+    background-image: url(bg.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: poppins;
+    font-weight: 400;
+    font-size: 16px;          
+}
+
+a{
+    text-decoration: none;
+}
+.main-content{
+    align-items: flex-start;
+    align-content: center;
+    display: inline-flex;
+}
+
+header{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: rgba(0, 0, 0, 0.739);
+    backdrop-filter: blur(10px);
+}
+.logo{
+    cursor: pointer;
+}
+.nav-area{
+    list-style: none;
+}
+.nav-area li{
+    
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.nav-area li a{
+    z-index: 0;
+    transition: all .3s ease 0s;
+    color: #fff;
+}
+.nav-area li a:hover{
+    color: #006C87;
+}
+.login-btn-area {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: #006C87;           
+}
+
+.login-btn-area:hover{
+    transition:ease-in .2s;
+    color: #006C87;
+    background:rgb(255, 255, 255);
+}
+
+
+.reg-btn-area {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid; 
+    border-width: 1px;   
+}
+
+.reg-btn-area:hover{
+    transition:ease-in .2s;
+    color: #006C87;
+    background:rgb(255, 255, 255);
+}
+
+.content-card{
+    margin: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.739);
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 2px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+h1{
+    font-size: 72px;
+}
