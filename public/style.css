@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;            
 }
+
 body{
     background-image: url(bg.jpg);
     -webkit-background-size: cover;
@@ -105,4 +106,33 @@ header{
 
 h1{
     font-size: 72px;
+}
+
+#login-form{
+    margin: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.739);
+    font-size: 22px;
+    padding: 50px;
+    padding-top: 30px;
+    border-radius: 2px;
+    /* display: inline-block; */
+    backdrop-filter: blur(10px);
+}
+
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    left: 50%;
+}
+
+#login-form input{
+    padding: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:4px;
+    font-family:inherit;
 }
