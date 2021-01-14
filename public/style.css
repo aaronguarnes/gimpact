@@ -36,6 +36,19 @@ header{
     background-color: rgba(0, 0, 0, 0.739);
     backdrop-filter: blur(10px);
 }
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.739);
+    backdrop-filter: blur(10px);
+    padding: 10px 50px;
+    font-size: 12px;
+    text-align: center;
+}
+
 .logo{
     cursor: pointer;
 }
@@ -56,6 +69,25 @@ header{
 .nav-area li a:hover{
     color: #006C87;
 }
+
+.foot-area{
+    list-style: none;
+}
+.foot-area li{
+    
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.foot-area li a{
+    z-index: 0;
+    transition: all .3s ease 0s;
+    color: #fff;
+}
+.foot-area li a:hover{
+    color: #006C87;
+}
+
 .login-btn-area {
     cursor: pointer;
     color: #fff;
@@ -135,4 +167,35 @@ h1{
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     border-radius:4px;
     font-family:inherit;
+}
+
+.char-portrait{
+    cursor: pointer;
+    margin:8px;
+    border: 2px solid rgba(238, 238, 238, 0.493);
+    border-radius: 2px;
+}
+
+.char-portrait:hover{
+    box-shadow: 0px 0px 6px #fff;
+    transition:ease-in .1s;
+    transform: scale(1.05);
+}
+
+#main-char{
+    text-align: center;
+}
+
+#recent-post a ul{
+    background-color: rgba(0, 0, 0, 0.267);
+    padding: 1px;
+    margin: 2px;
+    list-style: none;
+    color: #eee;
+}
+
+#recent-post a ul:hover{
+    box-shadow: 0px 0px 3px #fff;
+    transition:ease-in .1s;
+    transform: scale(1.01);
 }
