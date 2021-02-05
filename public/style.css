@@ -7,11 +7,14 @@ body{
     background-image: url(bg.jpg);
     -webkit-background-size: cover;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     height: 100vh;
     font-family: poppins;
     font-weight: 400;
-    font-size: 16px;          
+    font-size: 16px;        
+    display: block; 
 }
 
 a{
@@ -34,6 +37,11 @@ header{
     padding: 20px 70px;
     background-color: rgba(0, 0, 0, 0.739);
     backdrop-filter: blur(10px);
+    width: 100%; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .logo{
     cursor: pointer;
@@ -105,4 +113,167 @@ header{
 
 h1{
     font-size: 72px;
+}
+
+.nav-bar
+{
+    background-color: rgba(0,0,0,0.8);
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+}
+
+.navbar-brand img
+{
+    height: 35px;
+}
+
+.navbar-nav
+{
+    float: right;
+    text-align: right;
+}
+
+.nav-link
+{
+    color:white !important;
+}
+
+.card 
+{
+    display: inline-block;
+    height: 175px;
+    width: 450px;
+    padding: 5px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+    
+    /* position: relative;
+    display: inline-block;
+    height: 150px;
+    width: 450px;
+    padding: 1px;
+    flex-direction: row;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(0,0,0,0.2);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 2px;
+    margin: 0px 0px 21px; */
+}
+
+.card-weapons
+{
+    display: inline-block;
+    height: 230px;
+    width: 310px;
+    padding: 10px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+}
+
+.card-artifacts 
+{
+    display: inline-block;
+    height: 180px;
+    width: 600px;
+    padding: 5px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+
+}
+
+.character-img
+{
+    width: 50%;
+    height: 170px;
+    float: right;
+}
+
+.weapons-img
+{
+    width: 290px;
+    height: 210px;
+}
+
+.artifacts-img
+{
+    width: 40%;
+    height: 170px;
+    float: right;
+}
+
+.database-names
+{
+    color: white;
+    font-size: 20px;
+}
+
+.database-descriptions
+{
+    color:lightgray;
+}
+
+.sidebar
+{
+    background-color: rgba(0,0,0, 0.4);
+    width: 10%;
+    height: 100%;
+    position: fixed;
+    padding: 1%;
+    margin: auto;
+}
+
+.database-button
+{
+    color:rgb(185, 185, 185) !important;
+    line-height: 3;
+    display: block;
+}
+
+.database-content
+{
+    width: 90%;
+    position: absolute;
+    right: 0px;
+    height: fit-content;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    z-index: -1;
+}
+
+.section-wrap
+{
+    padding: 20px;
+    height: fit-content;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.section
+{
+    border-top: 1px solid #f0f0f0;
+    position: relative;
+    padding: 20px 0;
+    display: table;
+}
+
+.section-title
+{
+    font-weight: bold;
+    font-size: 20px;
+    color:white;
+    display: block;
+}
+
+.section-content
+{
+    line-height: 20px;
+    color:rgb(185, 185, 185)
 }

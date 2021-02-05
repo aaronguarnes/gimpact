@@ -40,3 +40,27 @@ app.get('/register', function (req, res) {
     res.render("register");
 });
 
+app.get('/database', function (req, res) {
+    res.render("database");
+});
+
+app.get('/forum', function (req, res) {
+    res.render("forum");
+});
+
+app.get('/characters', function (req, res) {
+    res.render("characters");
+});
+
+app.get('/weapons', function (req, res) {
+    res.render("weapons");
+});
+
+app.get('/artifacts', function (req, res) {
+    res.render("artifacts");
+});
+
+app.get('/materials', function (req, res) {
+    res.render("materials");
+});
+
