@@ -40,3 +40,10 @@ app.get('/register', function (req, res) {
     res.render("register");
 });
 
+app.get('/database', function (req, res) {
+    res.render("database");
+});
+
+app.get('/forum', function (req, res) {
+    res.render("forum");
+});
