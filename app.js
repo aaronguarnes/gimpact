@@ -36,17 +36,14 @@ app.get('/login', function (req, res) {
     res.render("login");
 });
 
-app.post('/login', function (req, res) {
-    //login function
-});
-
 app.get('/register', function (req, res) {
     res.render("register");
 });
 
-app.post('/register', function (req, res) {
-    //register function
+app.get('/database', function (req, res) {
+    res.render("database");
 });
 
-
-
+app.get('/forum', function (req, res) {
+    res.render("forum");
+});
