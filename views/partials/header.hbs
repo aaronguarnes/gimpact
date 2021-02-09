@@ -7,7 +7,13 @@
         </ul>
     </nav>
     <div>
-        <a class="login-btn-area" href="login">login</a>
-        <a class="reg-btn-area" href="register">register</a>
+        {{#if user}}
+            <p>Hello, {{ user }}!</p>
+        {{else}}
+                {{#unless form}}
+                    <a class="login-btn-area" href="login">login</a>
+                    <a class="reg-btn-area" href="register">register</a>
+                {{/unless}}
+        {{/if}}
     </div>
 </header>

@@ -1,11 +1,9 @@
-module.exports = (function() {
-    'use strict';
-    var loginroute = require('express').Router();
-
-    loginroute.get('/login', function (req, res) {
-        res.render('login', {title: 'Gimpact - Guides, Database', condition: false});
-    });
+var express = require('express');
+var router = express.Router();
+var User = require('../model/User')
 
 
-    return loginroute;
-})();
+
+module.exports = router;
+
+
