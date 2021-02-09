@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const charSchema = new Schema({
         name: {type: String},
         title: {type: String},
+        description: {type: String},
         talents: {type: [String]},
         constellation: {type: String},
         ascension: {type: String}
