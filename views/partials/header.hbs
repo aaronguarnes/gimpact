@@ -2,13 +2,14 @@
     <nav>
         <ul class="nav-area">
             <li><a href="/">Home</a></li>
-            <li><a href="forum">Forum</a></li>
-            <li><a href="database">Database</a></li>
+            <li><a href="/forum">Forum</a></li>
+            <li><a href="/database">Database</a></li>
         </ul>
     </nav>
     <div>
         {{#if user}}
             <p>Hello, {{ user }}!</p>
+            <a class="login-btn-area" href="/logout">logout</a>
         {{else}}
                 {{#unless form}}
                     <a class="login-btn-area" href="login">login</a>

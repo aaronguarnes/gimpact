@@ -64,20 +64,15 @@ header{
 }
 
 footer{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    padding: 10px 70px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.739);
     backdrop-filter: blur(10px);
-    width: 100%; 
-    position: -webkit-sticky;
-    position: absolute;
-    bottom: 0;
+    padding: 10px 50px;
+    font-size: 12px;
+    text-align: center;
 }
 
 .foot-area{
@@ -191,6 +186,27 @@ h1{
     margin: 0px 0px 21px;
 }
 
+.card-weapons
+{
+    display: inline-block;
+    height: 230px;
+    width: 310px;
+    padding: 10px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+}
+
+.card-artifacts 
+{
+    display: inline-block;
+    height: 180px;
+    width: 600px;
+    padding: 5px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+
+}
+
 .character-img
 {
     width: 50%;
@@ -264,4 +280,33 @@ h1{
 {
     line-height: 20px;
     color:rgb(185, 185, 185)
+}
+
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    left: 50%;
+}
+
+#login-form{
+    margin: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.739);
+    font-size: 22px;
+    padding: 50px;
+    padding-top: 30px;
+    border-radius: 2px;
+    /* display: inline-block; */
+    backdrop-filter: blur(10px);
+}
+
+#login-form input{
+    padding: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:4px;
+    font-family:inherit;
 }

@@ -8,6 +8,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
+const path = require('path');
 
 mongoose.connect('mongodb+srv://admin:mqVkTeEUKGRVhyur@gimpact.odeny.mongodb.net/gimpact?retryWrites=true&w=majority', function(err){
     if(err){
@@ -19,6 +20,8 @@ mongoose.connect('mongodb+srv://admin:mqVkTeEUKGRVhyur@gimpact.odeny.mongodb.net
 
 const User = require('./model/User');
 const Posts = require('./model/Post');
+const Items = require('./model/Items');
+const Characters = require('./model/Characters');
 const { post } = require('./routes/login');
 const { helpers } = require('handlebars');
 
@@ -47,6 +50,7 @@ app.engine('hbs', hbs({
     }
 }));
 
+app.use(express.static(path.join(__dirname, 'static')))
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
@@ -55,11 +59,18 @@ app.listen(port, () => {
 app.get('/', function (req, res) { //main page
     console.log(req.session);
     if(!req.session.user){
+        console.log(post);
         res.render("main", {title: 'Gimpact - Guides, Database'});
     }
     else{
+        
         res.render("main", {title: 'Gimpact - Guides, Database', user: req.session.user.firstname});
     }
+});
+
+app.get('/logout', function(req, res) {
+    req.session.destroy();
+    res.redirect("/");
 });
 
 app.get('/login', function (req, res) { //login page
@@ -98,23 +109,26 @@ app.get('/register', function (req, res) { //reg page
 app.post('/register',function (req, res) { //reg function
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
+    var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
 
     var newuser = new User();
     newuser.firstname = firstname;
     newuser.lastname = lastname;
+    newuser.username = username;
     newuser.email = email;
     newuser.password = password;
     newuser.isAdmin = false;
     newuser.save(function(err, savedUser) {
         if(err){
             console.log(err);
+            res.render("main");
             return res.status(500).send();
         }
         
         return res.status(200).send();
-        res.render("main");
+        res.redirect("/");
     })
 })
 
@@ -153,3 +167,37 @@ app.get('/post/:_id', function(req, res) {
     
     
 });
+
+app.get('/charsearch', function(req,res){
+});
+
+app.get('/database/:type', function(req, res) {
+    console.log(req.params);
+    if(req.params.type == "chars"){
+        Characters.find({type: req.params}, function(err, post){
+            if(err){
+                console.log(err);
+                //return res.status(404).send();
+            }
+            console.log(post);
+            console.log("Searching for chars");
+            res.render('database', {title: 'Gimpact - Guides, Database', post: post});
+            //return res.status(200).send();
+        })
+    } else{
+        Items.find({type: req.params.type}, function(err, post){
+            if(err){
+                console.log(err);
+                //return res.status(404).send();
+            }
+            console.log(post);
+            console.log("Searching for "+ req.params.type);
+            res.render('database', {title: 'Gimpact - Guides, Database', post: post});
+            //return res.status(200).send();
+        })
+
+    }
+
+
+
+})
