@@ -1,6 +1,9 @@
 {
   "name": "gimpact",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.18.3"
+  },
   "description": "Genshin Impact guides and forum",
   "main": "app.js",
   "scripts": {
