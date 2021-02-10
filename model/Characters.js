@@ -7,11 +7,8 @@ const charSchema = new Schema({
         description: {type: String},
         talents: {type: [String]},
         constellation: {type: String},
-        ascension: {type: String}
-
-
-
-    
+        ascension: {type: String},
+        picture: {type: String}
 });
 
 var Char = mongoose.model('myChar', charSchema)

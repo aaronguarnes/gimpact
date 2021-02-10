@@ -12,7 +12,15 @@
   </div>
     
   <div class="database-content">
-    <div class="card">
+    {{#each post}}
+      <div class="content-card">
+        <img src="../images/{{picture}}" class="character-img">
+        <h3 class="database-names">{{name}}</h3>
+        <h5 class="database-descriptions">{{description}}</h5>
+      </div>
+    {{/each}}
+
+    {{!-- <div class="card">
       <img src="../images/Keqing.png" class="character-img">
       <h3 class="database-names">Ke qing </h3>
       <h5 class="database-descriptions">The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis’ 
@@ -74,7 +82,7 @@ Although the concept of a starlet is rather novel in a city of bards, the people
 
 Although the concept of a starlet is rather novel in a city of bards, the people of Mondstadt love Barbara nonetheless.</h5>
       
-    </div>
+    </div> --}}
   </div>   
 
 

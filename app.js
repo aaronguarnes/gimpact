@@ -174,7 +174,7 @@ app.get('/charsearch', function(req,res){
 app.get('/database/:type', function(req, res) {
     console.log(req.params);
     if(req.params.type == "chars"){
-        Characters.find({type: req.params}, function(err, post){
+        Characters.find({type: req.params}).lean().exec(function(err, post){
             if(err){
                 console.log(err);
                 //return res.status(404).send();
@@ -185,7 +185,7 @@ app.get('/database/:type', function(req, res) {
             //return res.status(200).send();
         })
     } else{
-        Items.find({type: req.params.type}, function(err, post){
+        Items.find({type: req.params.type}).lean().exec(function(err, post){
             if(err){
                 console.log(err);
                 //return res.status(404).send();
