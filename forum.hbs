@@ -1,0 +1,23 @@
+<div class="section-wrap">
+<div class="create-post-wrap">
+  <input class="create-post" placeholder="Create Post" type="text" href="/views/createpost">
+</div>
+</div>
+
+{{#each post}}
+
+
+  <div class="section-wrap">
+    <div class="section">
+        <div class="section-title">{{ title }}</div>
+            <a class="section-content" href="/post/{{ _id }}">
+               by: {{ author }}
+            </a>
+    </div>
+  </div>
+
+{{/each}}
+   
+
+
+
