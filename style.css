@@ -1,0 +1,476 @@
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;            
+}
+body{
+    background-image: url(bg.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: poppins;
+    font-weight: 400;
+    font-size: 16px;        
+    display: block; 
+}
+
+a{
+    text-decoration: none;
+}
+.main-content{
+    align-items: flex-start;
+    align-content: center;
+    display: inline-flex;
+}
+
+header{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: rgba(0, 0, 0, 0.739);
+    backdrop-filter: blur(10px);
+    width: 100%; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.logo{
+    cursor: pointer;
+}
+.nav-area{
+    list-style: none;
+}
+.nav-area li{
+    
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.nav-area li a{
+    z-index: 0;
+    transition: all .3s ease 0s;
+    color: #fff;
+}
+.nav-area li a:hover{
+    color: #006C87;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.739);
+    backdrop-filter: blur(10px);
+    padding: 10px 50px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.foot-area{
+    list-style: none;
+}
+.foot-area li{
+    
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.foot-area li a{
+    z-index: 0;
+    transition: all .3s ease 0s;
+    color: #fff;
+}
+.foot-area li a:hover{
+    color: #006C87;
+}
+
+.login-btn-area {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: #006C87;           
+}
+
+.login-btn-area:hover{
+    transition:ease-in .2s;
+    color: #006C87;
+    background:rgb(255, 255, 255);
+}
+
+
+.reg-btn-area {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid; 
+    border-width: 1px;   
+}
+
+.reg-btn-area:hover{
+    transition:ease-in .2s;
+    color: #006C87;
+    background:rgb(255, 255, 255);
+}
+
+.content-card{
+    margin: 10px auto;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.739);
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 2px;
+    backdrop-filter: blur(10px);
+    height: fit-content;
+    width: 50%;
+    position: relative;
+}
+
+h1{
+    font-size: 72px;
+}
+
+.nav-bar
+{
+    background-color: rgba(0,0,0,0.8);
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+}
+
+.navbar-brand img
+{
+    height: 35px;
+}
+
+.navbar-nav
+{
+    float: right;
+    text-align: right;
+}
+
+.nav-link
+{
+    color:white !important;
+}
+
+.card 
+{
+    position: relative;
+    display: inline-block;
+    height: 150px;
+    width: 450px;
+    padding: 1px;
+    flex-direction: row;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(0,0,0,0.2);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 2px;
+    margin: 0px 0px 21px;
+}
+
+.card-weapons
+{
+    display: inline-block;
+    height: 230px;
+    width: 310px;
+    padding: 10px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+}
+
+.card-artifacts 
+{
+    display: inline-block;
+    height: 180px;
+    width: 600px;
+    padding: 5px;
+    margin: 5px; 
+    background-color: rgba(0,0,0,0.9);
+
+}
+
+.character-img
+{
+    width: auto;
+    height: auto;
+    float: right;
+}
+
+.database-names
+{
+    font-size: 20px;
+}
+
+.database-descriptions
+{
+    color:lightgray;
+}
+
+.sidebar
+{
+    background-color: rgba(0,0,0, 0.4);
+    width: 10%;
+    height: 100%;
+    position: fixed;
+    padding: 1%;
+    margin: auto;
+}
+
+.database-button
+{
+    color:rgb(185, 185, 185) !important;
+    line-height: 3;
+    display: block;
+}
+
+.database-content
+{
+    width: 90%;
+    position: absolute;
+    right: 0px;
+    height: fit-content;
+    padding: 50px;
+}
+
+.section-wrap
+{
+    padding: 20px;
+    height: fit-content;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.section
+{
+    border-top: 1px solid #f0f0f0;
+    position: relative;
+    padding: 20px 0;
+    display: table;
+}
+
+.section-title
+{
+    font-weight: bold;
+    font-size: 20px;
+    color:white;
+    display: block;
+}
+
+.section-content
+{
+    line-height: 20px;
+    color:rgb(185, 185, 185)
+}
+
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    left: 50%;
+}
+
+#login-form{
+    margin: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.739);
+    font-size: 22px;
+    padding: 50px;
+    padding-top: 30px;
+    border-radius: 2px;
+    /* display: inline-block; */
+    backdrop-filter: blur(10px);
+}
+
+#login-form input{
+    padding: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:4px;
+    font-family:inherit;
+}
+
+.create-post-wrap
+{
+    background-color:  rgba(0,0,0,0.8);
+    border-radius: 4px;
+    border: 1px solid;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 16px;
+    padding: 8px;
+
+}
+
+.create-post
+{
+    background-color:  rgba(0,0,0,0.4);
+    border-radius: 4px;
+    border: 1px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    height: 38px;
+    margin-right: 8px;
+    outline: none;
+    padding: 0 16px;
+}
+
+.create-post-nav
+{
+    padding: 4px;
+    margin: 16px 0;
+    border-bottom: 1px solid gray;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.create-a-post
+{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: white;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.create-a-post-wrap
+{
+ 
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.create-a-post-title
+{
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 37.9912px;
+    box-shadow: none;
+    border: 1px solid gray;
+    padding: 8px 68px 8px 16px;
+    margin-bottom: 10px;
+    font-size: 26px;
+    resize: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(19, 19, 19);
+}
+
+.create-a-post-textbox
+{
+    border: none;
+    outline: none; 
+    user-select: text; 
+    white-space: pre-wrap; 
+    overflow-wrap: break-word;
+    background-color: blacks;
+    color: white;
+    font-size: 18px;
+    min-height: 122px;
+    overflow: hidden;
+    padding: 8px 16px;
+    width: 100%;
+    resize: vertical;
+    margin-bottom: 10px;
+    background-color: rgb(19, 19, 19);
+}
+
+/* .create-a-post-text
+{
+    padding: 0;
+    direction: ltr;
+    text-align: left;
+    position: relative;
+    white-space: pre-wrap;
+} */
+
+.post-button-wrap
+{
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+}
+
+.post-button
+{
+    float: right;
+    width: 82px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+
+    padding: 5px;
+
+}
+
+.comment-form>input[type="text"] {
+    width: 85%;
+    height: 25px;
+}
+
+.comment-form>input[type="button"] {
+    background-color:gray;
+    color: black;
+    border-radius: 5px;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    margin-top: 30px;
+}
+
+.comment-content {
+    display: flex;
+    flex-flow: column;
+    background-color: #BBB8B7;
+    padding: .5em;
+    margin-bottom: 0.5em;
+    color: white;
+    border-radius: 15px;
+}
+
+.delete-comment-button {
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    position: relative;
+    width: 10%;
+    align-self: flex-end;
+}

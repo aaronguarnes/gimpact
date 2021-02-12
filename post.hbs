@@ -1,0 +1,24 @@
+
+    <div class="content-card">
+
+       <h1>{{ post.title }} </h1>
+       <h2>{{post.user.username}}</h2>
+        {{ post.content }}
+         <div class="comment-section">
+            {{#each comment}}
+            <div class="comment-content">
+                <p>{{comment}}</p>
+                {{!-- we are placing hidden inputs here so that we can easily delete the comment based on the post and comment id --}}
+                <input type="hidden" name="post_id" value={{../_id}}></input>
+                <input type="hidden" name="comment_id" value={{_id}}>
+                <input class="delete-comment-button" type="button" value="delete">
+            </div>
+            {{/each}}
+        </div>
+        <form class="comment-form">
+            {{!-- we are placing the post id here so that we know which post to attach a comment to  --}}
+            <input type="hidden" name="post-id" value={{_id}}></input>
+            <input type="text" name="comment" placeholder="Write a comment..."></input>
+            <input type="button" class="comment-submit" name="submit" value="comment"></input>
+        </form>
+    </div>
