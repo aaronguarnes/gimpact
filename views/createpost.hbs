@@ -1,0 +1,17 @@
+<div class="section-wrap">
+  <div class="create-post-nav">
+    <div class="create-a-post">
+      Create a post
+    </div>
+  </div>
+
+  <form id="create-form" action="/create" method="POST">
+    <div class="create-a-post-wrap">
+      <textarea maxlength="300" placeholder="Title" class="create-a-post-title" rows="1" name = "title" form="create-form"></textarea>
+      {{!-- <div class="create-a-post-textbox" contenteditable="true" role="textbox" spellcheck="true" form="create-form"></div> --}}
+      <textarea class="create-a-post-textbox" name = "content" form="create-form"></textarea>
+      <input class="post-button" type="submit" value="Post">
+    </div>
+    
+  </form>
+</div>

@@ -1,12 +1,27 @@
+<div class="section-wrap">
+{{#if user}}
+  <div class="create-post-wrap">
+  
+   <a class="create-post" href="/create">Create Post</a>
+  
+  </div>
+{{/if}}
+</div>
+
 {{#each post}}
+
+
   <div class="section-wrap">
     <div class="section">
         <div class="section-title">{{ title }}</div>
             <a class="section-content" href="/post/{{ _id }}">
-               by: {{ author }}
+               by: {{ author.username }} {{ date }}
             </a>
     </div>
   </div>
+
 {{/each}}
    
+
+
 

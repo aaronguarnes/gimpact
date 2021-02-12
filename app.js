@@ -151,12 +151,53 @@ app.get('/forum', function (req, res) {
         });
     }
     else{
-        res.render("forum", {title: 'Gimpact - Guides, Database', user: req.session.user.firstname});
+        Posts.find({}).lean().exec(function (err, posts){
+            console.log(posts)
+            res.render("forum", {title: 'Gimpact - Guides, Database', user: req.session.user.firstname, post: posts});
+     
+        });
     }
 });
 
+app.get('/create', function (req, res) {
+    if(req.session.user){
+        res.render("createpost", {title: 'Gimpact - Guides, Database', condition: false});
+    } else{
+        res.redirect("/login");
+    }
+
+});
+
+app.post('/create', function (req, res){
+    var title = req.body.title;
+    var content = req.body.content;
+    var user = req.session.user
+    var date = Date.now();
+    var newpost = new Posts();
+    newpost.title = title;
+    newpost.content = content;
+    newpost.date = date;
+    newpost.author = req.session.user;
+    console.log("this is the user: ");
+    console.log(user);
+    newpost.save(function(err, savedPost) {
+        if(err){
+            console.log(err);
+            res.redirect("/forum");
+            return res.status(500).send();
+        }
+        
+        res.redirect("/forum");
+    })
+
+});
+
+
+
+//
+
 app.get('/post/:_id', function(req, res) {
-    Posts.findOne({_id: req.params}, function(err, post){
+    Posts.findOne({_id: req.params}).lean().exec( function(err, post){
         if(err){
             console.log(err);
             return res.status(404).send();
