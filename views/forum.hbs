@@ -15,9 +15,14 @@
     <div class="section">
         <div class="section-title">{{ title }}</div>
             <a class="section-content" href="/post/{{ _id }}">
-               by: {{ author.username }} {{ date }}
+               by: {{ author.username }} <br> {{ date }}
             </a>
     </div>
+    {{#ifEquals author.username user}}    
+      <form action="/delete/{{_id}}" method="POST">
+        <button type="submit">delete</button>
+      </form>
+    {{/ifEquals}}
   </div>
 
 {{/each}}

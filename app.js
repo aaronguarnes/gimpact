@@ -31,6 +31,7 @@ app.use(session({secret:"gomag532gj99j", resave:false, saveUninitialized:true}))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
 
+
 // const loginroute = require('./routes/login');
 // app.use('/form', loginroute);
 
@@ -46,6 +47,9 @@ app.engine('hbs', hbs({
                 return [];
             }
             return arr.slice(0, limit);
+        },
+        ifEquals: function(arg1, arg2, options) {
+            return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
         }
     }
 }));
@@ -64,7 +68,7 @@ app.get('/', function (req, res) { //main page
     }
     else{
         
-        res.render("main", {title: 'Gimpact - Guides, Database', user: req.session.user.firstname});
+        res.render("main", {title: 'Gimpact - Guides, Database', user: req.session.user});
     }
 });
 
@@ -138,13 +142,13 @@ app.get('/database', function (req, res) {
         res.render("database", {title: 'Gimpact - Guides, Database'});
     }
     else{
-        res.render("database", {title: 'Gimpact - Guides, Database', user: req.session.user.firstname});
+        res.render("database", {title: 'Gimpact - Guides, Database', user: req.session.user});
     }
 });
 
 app.get('/forum', function (req, res) {
     if(!req.session.user){
-        Posts.find({}).lean().exec(function (err, posts){
+        Posts.find({}).sort({date: 'desc'}).lean().exec(function (err, posts){
             console.log(posts)
             res.render("forum", { title: 'Gimpact - Guides, Database', post: posts })
      
@@ -153,7 +157,7 @@ app.get('/forum', function (req, res) {
     else{
         Posts.find({}).lean().exec(function (err, posts){
             console.log(posts)
-            res.render("forum", {title: 'Gimpact - Guides, Database', user: req.session.user.firstname, post: posts});
+            res.render("forum", {title: 'Gimpact - Guides, Database', user: req.session.user, post: posts});
      
         });
     }
@@ -193,8 +197,17 @@ app.post('/create', function (req, res){
 });
 
 
+app.post('/delete/:_id', function(req, res){
+    console.log("Delete func")
+    Posts.deleteOne({ _id: req.params }, function (err) {
+        if(err) console.log(err);
+        console.log("Successful deletion");
+        res.redirect('back');
+      });
 
-//
+
+
+})
 
 app.get('/post/:_id', function(req, res) {
     Posts.findOne({_id: req.params}).lean().exec( function(err, post){
@@ -209,7 +222,14 @@ app.get('/post/:_id', function(req, res) {
     
 });
 
-app.get('/charsearch', function(req,res){
+app.get('/search', function (req, res) {
+    var q = req.query.val;
+    Items.find({ name: { $regex: q, $options: "i" } }).lean().exec( function(err, docs) {
+        console.log("Partial Search Begins");
+        console.log(docs);
+        res.render('database', {title: 'Gimpact - Guides, Database', post: docs});
+        });
+
 });
 
 app.get('/database/:type', function(req, res) {

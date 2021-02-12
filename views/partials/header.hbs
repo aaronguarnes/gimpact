@@ -6,14 +6,22 @@
             <li><a href="/database/chars">Database</a></li>
         </ul>
     </nav>
+    <div class="search">
+        <form action="/search" method="GET">
+            <input type="text" name="val">
+            <input type="submit" value="Search">
+        </form>
+    </div>
     <div>
         {{#if user}}
-            <p>Hello, {{ user }}!</p>
-            <a class="login-btn-area" href="/logout">logout</a>
+            <ul class="nav-area">
+                <li><p>Hello, {{ user.username }}!</p></li>
+                <li><a class="login-btn-area" href="/logout">logout</a></li>
+            </ul>
         {{else}}
                 {{#unless form}}
-                    <a class="login-btn-area" href="login">login</a>
-                    <a class="reg-btn-area" href="register">register</a>
+                    <a class="login-btn-area" href="/login">login</a>
+                    <a class="reg-btn-area" href="/register">register</a>
                 {{/unless}}
         {{/if}}
     </div>
